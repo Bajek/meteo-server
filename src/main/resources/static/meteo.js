@@ -14,7 +14,7 @@
 	
 	function getData() {
 		getTime();
-		$.getJSON('/readouts/1/' + getFormattedDate(startTime) + "/" + getFormattedDate(endTime), function(data) {
+		$.getJSON('readouts/1/' + getFormattedDate(startTime) + "/" + getFormattedDate(endTime), function(data) {
 			var temp = [],
 				voltage = [],
 				chart;
