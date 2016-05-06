@@ -1,7 +1,6 @@
 package pl.ubytes.entity;
 
 import java.sql.Timestamp;
-import java.time.Instant;
 import java.time.ZoneOffset;
 import java.time.ZonedDateTime;
 
