@@ -3,6 +3,8 @@ package pl.ubytes.controller;
 import java.sql.Timestamp;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.time.ZoneOffset;
+import java.time.ZonedDateTime;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -78,8 +80,10 @@ public class ReadoutController {
 			startTime  = new Timestamp(df.parse(start).getTime());
 			endTime  = new Timestamp(df.parse(end).getTime());
 		} catch (ParseException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			//in case of an exception with parsing extract one last hour:
+			endTime = Timestamp.from(ZonedDateTime.now(ZoneOffset.UTC).toInstant());
+			startTime = new Timestamp(endTime.getTime() - 60 * 60 * 1000);
+			LOGGER.warn("Error with parsing time ranges: {}", e.getMessage());
 		}
 		LOGGER.info("Got readouts request for {} for date {} - {} from {}", sensorId, startTime, endTime, 
 				request.getRemoteAddr());
