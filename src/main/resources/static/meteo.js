@@ -26,7 +26,20 @@ $(function() {
             chart = $('#container').highcharts();
             chart.series[0].setData(temp);
             chart.series[1].setData(voltage);
+            setLastReadout(temp, voltage);
         });
+    }
+
+
+    function setLastReadout(tempArray, voltageArray) {
+        var lastTemp = tempArray[tempArray.length - 1],
+            lastVoltage = voltageArray[voltageArray.length - 1],
+            html = moment(lastTemp[0]).format("HH:mm:ss DD-MM-YYYY ") + '<br>';
+            html += 'Last temperature: ' + lastTemp[1] + ' °C';
+            html += '<br>';
+            html += 'Last voltage: ' + lastVoltage[1] + ' V'
+        $('#last').html(html);
+
     }
 
     function getFormattedDate(date) {

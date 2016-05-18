@@ -1,19 +1,28 @@
 <html>
-	<head>
-		<title>Meteo server</title>
-		<script src="https://code.jquery.com/jquery-1.12.3.min.js"></script>
-		<script src="https://code.highcharts.com/highcharts.js"></script>
-		<script src="https://code.highcharts.com/modules/data.js"></script>
-		<script src="https://code.highcharts.com/modules/exporting.js"></script>
 
-		<!-- Additional files for the Highslide popup effect -->
-		<script src="https://www.highcharts.com/samples/static/highslide-full.min.js"></script>
-		<script src="https://www.highcharts.com/samples/static/highslide.config.js" charset="utf-8"></script>
-		<link rel="stylesheet" type="text/css" href="https://www.highcharts.com/samples/static/highslide.css" />
-		<script src="meteo.js"></script>
-	</head>
-	
-	<body>
-		<div id="container" style="min-width: 310px; height: 100%; margin: 0 auto"></div>
-	</body>
+<head>
+	<title>Meteo server</title>
+	<script src="https://code.jquery.com/jquery-1.12.3.min.js"></script>
+	<script src="https://code.highcharts.com/highcharts.js"></script>
+	<script src="https://code.highcharts.com/modules/data.js"></script>
+	<script src="https://code.highcharts.com/modules/exporting.js"></script>
+
+	<!-- Additional files for the Highslide popup effect -->
+	<script src="https://www.highcharts.com/samples/static/highslide-full.min.js"></script>
+	<script src="https://www.highcharts.com/samples/static/highslide.config.js" charset="utf-8"></script>
+	<link rel="stylesheet" type="text/css" href="https://www.highcharts.com/samples/static/highslide.css" />
+	<script src="http://momentjs.com/downloads/moment.js"></script>
+	<script src="meteo.js"></script>
+</head>
+
+<body>
+	<div style="min-width: 310px; height: 100%; margin: 0 auto">
+		<center>
+			<div style="min-width: 310px; height: 6%; margin: 0 auto" id="last">
+			</div>
+		</center>
+		<div id="container" style="min-width: 310px; height: 94%; margin: 0 auto"></div>
+	</div>
+</body>
+
 </html>
