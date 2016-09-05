@@ -1,3 +1,3 @@
 # meteo-server
 
-Build status: https://travis-ci.org/Bajek/meteo-server.svg?branch=master
+Build status: ![travis-ci](https://travis-ci.org/Bajek/meteo-server.svg?branch=master)
